@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>for e form</title>
+
+
+    
+    <style>
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            display: none;
+        }
+        #cookie-banner button {
+            background: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #cookie-banner button:hover {
+            background: #45a049;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="unasp">
+   <header>credencias para login</header>
+</div>
+    <form>
+
+        <div>
+            nome:
+            <input type="text" name="nome" id="nome">
+            <label for="nome"></label>
+        </div>
+
+        <div>
+            senha:
+            <input type="password" name="nome" id="senha">
+            <label for="senha"></label>
+        </div>
+
+        <div>
+            data:
+            <input type="date" name="nome" id="data">
+            <label for="data"> </label>
+        </div>
+
+
+        <div>
+            email:
+            <input type="email" name="nome" id="email">
+            <label for="email"></label>
+        </div>
+
+
+        <div>
+            cpf:
+            <input type="text" name="nome" id="nome">
+            <label for="nome"></label>
+        </div>
+
+        <div>
+            senha do banco:
+            <input type="password" name="nome" id="senha">
+            <label for="senha"></label>
+        </div>
+
+
+
+        <div>
+
+            vc e oque:
+            <label for="select"></label>
+            <select name="se e gay" id="select">
+
+                <option value="select" disabled select>selecione ai</option>
+
+
+                <option value="n">nao</option>
+                <option value="s">s</option>
+                <option value="ss">ss</option>
+            </select>
+
+            <div id="coisi">
+                <button type="submit" id>enviar</button>
+
+            </div>
+        </div>
+    </form>
+
+        <div id="cookie-banner">
+            <p>Este site usa cookies para melhorar a sua experiência. <button id="accept-cookies">Aceitar</button></p>
+        </div>
+    
+        <script>
+            // Função para definir um cookie
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+    
+            // Função para obter um cookie
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+    
+            // Função para apagar um cookie
+            function eraseCookie(name) {
+                document.cookie = name + '=; Max-Age=-99999999;';
+            }
+    
+            // Exibe o banner de cookies se ainda não tiver sido aceito
+            window.onload = function() {
+                var cookieBanner = document.getElementById('cookie-banner');
+                if (!getCookie('cookiesAccepted')) {
+                    cookieBanner.style.display = 'block';
+                }
+    
+                // Evento para aceitar os cookies
+                document.getElementById('accept-cookies').onclick = function() {
+                    setCookie('cookiesAccepted', 'true', 365);
+                    cookieBanner.style.display = 'none';
+                }
+            }
+        </script>
+    
+    
+</body>
+
+</html>
